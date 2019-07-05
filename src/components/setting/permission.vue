@@ -2,13 +2,12 @@
   <div> 
     <common-tree-list  
     :serviceName            = "serviceName"
-    :operationTableName     = "operationTableName" 
-    :operationTreeName      = "operationTreeName"
-    :operationListName      = "operationListName"
-    :powerGroupLeft         = "powerGroupLeft"
-    :powerGroupRight        = "powerGroupRight" 
-    :operationTreeDefaultVal= "operationTreeDefaultVal"
+    :leftTableName          = "leftTableName"
+    :rightTableName         = "rightTableName" 
+    :rightGetName           = "rightGetName"
+    :rightGetDefaultVal     = "rightGetDefaultVal"
     :paramField             = "paramField"
+    :property               = "property"
     />  
   </div>
 </template>
@@ -19,23 +18,12 @@ export default{
   data() {    
     return {
       serviceName            : Yukon.ServiceName.Tenant,
-      operationTableName     : 'CstPermission',
-      operationTreeName      : 'Authorization',
-      operationListName      : 'CstRole',
-      powerGroupLeft         : '角色',
-      powerGroupRight        : '详细信息',
-      operationTreeDefaultVal: 'GetUserPermissionTree',
-      paramField             : 'RoleId',
-      /*
-       注释：
-       operationTableName     ： 点击左侧菜单接口参数/保存接口参数
-       operationTreeName      ： 右侧树节点请求参数
-       powerGroupLeft         ： 左侧权限组名提示文本
-       powerGroupRight        : 右侧提示文本
-       operationListName      : 左侧列表接口参数
-       operationTreeDefaultVal:保存接口参数DefaultVal
-       paramField             :点击左侧查询的filter中的字段/保存中的data中的字段
-      */
+      leftTableName          : 'CstRole',                 // 左侧表Name
+      rightTableName         : 'CstPermission',           // 右侧表Name
+      rightGetName           : 'Authorization',           // 右侧查询数据Name
+      rightGetDefaultVal     : 'GetUserPermissionTree',   // 右侧查询数据方法名
+      paramField             : 'RoleId',                  // 右侧表查询、保存时用
+      property               : 'MenuId',                  // 右侧查询属性
     }
   }
 }

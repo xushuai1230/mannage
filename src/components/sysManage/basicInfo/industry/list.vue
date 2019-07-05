@@ -17,8 +17,8 @@ export default{
   data() {    
     return {
       serviceName       : Yukon.ServiceName.Tenant,
-      operationTableName:'DictionaryIndustry',
-      searchName        :'行业',
+      operationTableName:'SysDictionaryIndustry',
+      searchName        :'名称',
       searchFields      :'Name',
       editPageLable     :'行业',
       editPageKey       :'IndustryEdit',

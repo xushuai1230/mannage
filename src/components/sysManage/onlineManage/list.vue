@@ -2,9 +2,8 @@
     <div class="conmmonlist">
       <div class="actionBar">
         <el-row  class="actionBarList">
-          <div class="operationBtn">
-             <el-button size="mini" icon="el-icon-refresh" @click="Refresh">刷新</el-button>
-             <el-button size="mini" icon="el-icon-delete" @click = "ToBreakOff">断开连接</el-button>
+          <div class="operationBtn" v-for="btn in buttonArray" >
+            <el-button size="mini" :icon="btn.icon" @click="Action(btn.btn)" >{{btn.text}}</el-button>
           </div>
         </el-row>
        </div>
@@ -50,11 +49,9 @@
   import axios from 'axios'
   export default {
     name: 'permission',
-    props: ['refresh','event'],
     data() {
       return {
-        divHeight:'',
-        height:'',
+        buttonArray: [],
         tablerows:0,
         tableData: [],
         pagesize:15,//每页的数据条数
@@ -65,17 +62,48 @@
       };
     },
     computed: {
-      propList() {
-        return Object.keys(this.props).map(item => ({
-          name: item,
-        }));
-      },
-      ...mapGetters(['token']), 
+      ...mapGetters(["token", "mid"])
     },
     created(){
+      this.getActionBar();
       this.getColumns();
     },
     methods: {
+      // 获取操作栏
+      getActionBar() {
+        var filter = {
+          Service: Yukon.ServiceName.Tenant,
+          ModularId: this.mid,
+          TabName: "OnlineManage"
+        };
+        var filterJson = JSON.stringify(filter);
+        var objData = {
+          Name: "Authorization",
+          DefaultVal: "GetOperationAuthority",
+          Filter: filterJson
+        };
+        var jsonData = JSON.stringify(objData);
+        this.$http.post(Yukon.Url.Bus,qs.stringify({
+          name: Yukon.ServiceName.Tenant,
+          operation: "GetJsonData",
+          token: this.token,
+          reqInfo: jsonData
+        }),
+        {
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+          }
+        }).then(response => {
+          var result = response.data;
+          if (result.code == 0) {
+            var columnsData = result.data;
+            this.buttonArray = columnsData;
+          }
+        })
+        .catch(error => {
+          console.log(error);
+        });
+      },
       getColumns(){
         var colsData = {"name":"DBField","TblName":"OnLineUser"}
         var reqInfoColsData = JSON.stringify(colsData);
@@ -135,8 +163,15 @@
           alert(error)
         });
       },
+      Action(name) {
+        this[name]();
+      },
+      //刷新
+      Refresh(){
+        this.getData();
+      },
       //断开连接
-      ToBreakOff(){
+      Disconnect(){
         if(!this.multipleSelection || this.multipleSelection.length <= 0){
             this.$alert('请至少选择一条！', '提示', {
               confirmButtonText: '确定',
@@ -181,10 +216,6 @@
                 });
               })
           }
-      },
-      //刷新
-      Refresh(){
-        this.getData();
       },
       handleSizeChange(val) {
         this.currentPage = 1;

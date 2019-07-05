@@ -153,7 +153,6 @@
       })
       .catch(function (error) {
         console.log(error);
-        alert(error)
       });
     },
     Save(){
@@ -218,7 +217,6 @@
         })
         .catch(function (error) {
           console.log(error);
-          alert(error)
         });
       }
     }

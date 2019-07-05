@@ -1,6 +1,8 @@
 {
-	"Signalr":"http://192.168.0.119:8082/signalr",
-    "Bus":"http://192.168.0.198:1234/message",
-    "ApsPost":"http://192.168.0.198:9420/",
-    "Home":"http://192.168.0.198:6200/"
+	"Title":"iMC",
+    "Bus":"http://192.168.0.199:8081/message",
+    "Home":"http://192.168.0.199:8082/service.html",
+    "Login":"http://192.168.0.199:8082/login.html",
+    "Signalr":"http://192.168.0.199:8084/signalr",
+	"ApsPost":"http://192.168.0.199:8083/"
 }

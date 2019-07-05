@@ -17,8 +17,8 @@ export default{
   data() {    
     return {
      serviceName       : Yukon.ServiceName.Tenant,
-      operationTableName:'DictionaryErpSupplier',
-      searchName        :'ERP供应商',
+      operationTableName:'SysDictionaryErpSupplier',
+      searchName        :'名称',
       searchFields      :'Name',
       editPageLable     :'ERP供应商',
       editPageKey       :'ErpSupplierEdit',

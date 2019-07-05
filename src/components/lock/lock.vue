@@ -1,5 +1,5 @@
 <template>
-  <div class="lock">
+  <div class="loginLock">
     <div class="animated">
       <h3 class="text-white">重新登录</h3>
       <div class="lockContent" @keydown.13='login()'>

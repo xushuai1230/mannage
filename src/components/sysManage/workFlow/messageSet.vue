@@ -225,7 +225,6 @@ export default {
         objMessage.ToTenant.TenantId = this.ToTenantId;
         objMessage.ToTenant.Content = this.textareaHtml2;
         //判断不能重复
-        // debugger
         var containId = false;
         for (var i = 0; i < this.processName.length; i++) {
           if (this.processName[i].NodeId == objMessage.NodeId) {

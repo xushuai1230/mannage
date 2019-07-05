@@ -16,7 +16,7 @@ export default{
   data() {    
     return {  
       serviceName       : Yukon.ServiceName.Tenant,
-      operationTableName:'DictionaryMesSupplier',
+      operationTableName:'SysDictionaryMesSupplier',
     }
   },
 }

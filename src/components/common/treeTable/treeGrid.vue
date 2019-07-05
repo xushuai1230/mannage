@@ -5,12 +5,13 @@
     class="table"
     style="width: 100%"
     height="100%"
-    empty-text="  "
-    :row-style="showTr">
+    empty-text=" "
+    :row-style="showTr"
+    @selection-change ="handleSelectionChange">
     <el-table-column prop="Index" align="center" label='序号' width="55" fixed> </el-table-column>
     <el-table-column type="selection" align="center" width="55"  fixed> </el-table-column>
     <el-table-column v-for="(column, index) in columns" :key="column.prop" :width="column.width"
-      :label="column.label">
+      :label="column.label"  :isDisplay="column.isDisplay" v-if="column.isDisplay==1">
       <template slot-scope="scope">
         <span v-if="spaceIconShow(index)" v-for="(space, levelIndex) in scope.row._level" class="ms-tree-space"></span>
         <span class="button is-outlined is-primary is-mini" v-if="toggleIconShow(index,scope.row)" @click="toggle(scope.$index)">
@@ -39,6 +40,7 @@
 </template>
 <script>
   import Utils from './dataTranslate.js'
+  import "../../../assets/sass/treeGrid.scss"
 //  import Vue from 'vue'
   export default {
     name: 'tree-grid',
@@ -110,6 +112,10 @@
       }
     },
     methods: {
+       handleSelectionChange(val) {
+       this.multipleSelection = val; 
+       this.$emit("selectedRow",this.multipleSelection)
+    },
     // 显示行
       showTr: function (data, index) {
         let show = (data.row._parent ? (data.row._parent._expanded && data.row._parent._show) : true)
@@ -158,20 +164,12 @@
     }
   }
 </script>
-<style scoped lang=scss>
-  .table{
-    .ms-tree-space{position: relative;
-      top: 1px;
-      display: inline-block;
-      font-family: 'Glyphicons Halflings';
-      font-style: normal;
-      font-weight: 400;
-      line-height: 1;
-      width: 18px;
-      height: 14px;}
-    .ms-tree-space::before{content: ""}
-    table td{
-      line-height: 26px;
-    }
+<style lang="scss" scoped>
+.table {
+  /deep/.el-table__body-wrapper {
+    overflow: auto;
   }
+}
 </style>
+
+

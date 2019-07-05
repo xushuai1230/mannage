@@ -1,0 +1,266 @@
+/* 订单信息弹出框样式 */
+.exportImport {
+  .combobox {
+    width: calc(100% - 100px) !important;
+    height: 28px;
+    float: left;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-size: 12px;
+  }
+
+  .el-input__inner {
+    height: 28px !important;
+    line-height: 28px !important;
+    font-size: 12px !important;
+    padding: 0 10px !important;
+  }
+
+  .el-input__icon {
+    line-height: 26px !important;
+  }
+
+  .el-select__input {
+    height: 100% !important;
+    min-width: 50px;
+  }
+
+  .el-table--mini td,
+  .el-table--mini th {
+    padding: 0 !important;
+  }
+
+  .el-table .cell {
+    line-height: 30px !important;
+  }
+
+  .el-select__tags {
+    -ms-flex-wrap: nowrap !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto;
+
+    .el-tag {
+      margin: 3px 0 3px 6px !important;
+      height: 24px !important;
+      display: initial;
+    }
+
+    .el-tag:nth-child(1) {
+      margin: 3px 0 3px 10px !important;
+    }
+
+    .el-select__input {
+      min-width: 80px;
+    }
+  }
+
+  .el-select__tags::-webkit-scrollbar {
+    display: none
+  }
+
+  .workTop {
+    width: 45%;
+    float: left;
+    height: auto;
+    margin-right: 10px;
+
+    >span {
+      min-width: 100px;
+      height: 28px;
+      float: left;
+      line-height: 26px;
+      margin-bottom: 10px;
+      padding-right: 20px;
+      text-align: right;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+  }
+
+  .workInput {
+    width: 45%;
+    float: left;
+    height: auto;
+    margin-right: 10px;
+
+    >span {
+      min-width: 100px;
+      height: 28px;
+      float: left;
+      line-height: 28px;
+      margin-bottom: 10px;
+      padding-right: 20px;
+      text-align: right;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+  }
+
+  .edit {
+    width: 45%;
+    float: left;
+    height: 28px;
+    margin-bottom: 12px;
+
+    >span {
+      width: 100px;
+      height: 28px;
+      float: left;
+      line-height: 25px;
+      margin-bottom: 10px;
+      padding-right: 20px;
+      text-align: right;
+      font-size: 12px;
+      font-weight: normal;
+    }
+
+    >.el-input {
+      width: calc(100% - 100px);
+      height: 28px;
+      border-radius: 4px;
+      float: left;
+    }
+  }
+
+  .workerFlowBomBtn {
+    width: 100%;
+    float: left;
+    background-color: #f5f7fa80;
+    border: 1px solid #DCDFE6;
+    border-bottom: none;
+
+    .commit {
+      padding: 6px 10px !important;
+    }
+  }
+}
+
+#messageDialog {
+  .formcenter {
+    /* 发送信息样式 */
+    .rowDiv {
+      width: 100%;
+      float: left;
+      height: auto;
+      margin-right: 10px;
+
+      .el-textarea {
+        margin: 0 !important;
+      }
+
+      >span {
+        width: 26%;
+        height: 28px;
+        float: left;
+        line-height: 26px;
+        margin-bottom: 10px;
+        padding-right: 22px;
+        font-size: 12px;
+        white-space: nowrap;
+        text-align: right;
+      }
+
+      .el-input__inner {
+        height: 28px !important;
+        line-height: 28px !important;
+        font-size: 12px !important;
+        padding: 0 10px !important;
+      }
+
+      .opSelect {
+        width: 74% !important;
+        height: 28px;
+        float: left;
+        border-radius: 4px;
+        margin-bottom: 10px;
+        font-size: 12px;
+
+        .el-input {
+          width: 100%;
+          height: 28px;
+          float: left;
+          border-radius: 4px;
+          margin-bottom: 10px;
+          font-size: 12px;
+        }
+
+        .el-select__tags {
+          -ms-flex-wrap: nowrap !important;
+          flex-wrap: nowrap !important;
+          overflow-x: auto;
+
+          .el-tag {
+            margin: 3px 0 3px 6px !important;
+            height: 24px !important;
+            display: initial;
+          }
+
+          .el-tag:nth-child(1) {
+            margin: 3px 0 3px 10px !important;
+          }
+
+          .el-select__input {
+            min-width: 80px;
+          }
+        }
+
+        .el-select__tags::-webkit-scrollbar {
+          display: none
+        }
+      }
+    }
+
+    .el-input {
+      width: 74%;
+      height: 28px;
+      float: left;
+      border-radius: 4px;
+      margin-bottom: 10px;
+      font-size: 12px;
+
+      .el-input__icon {
+        line-height: 28px !important;
+      }
+    }
+
+    .el-textarea__inner {
+      padding: 5px 10px !important;
+    }
+  }
+}
+
+.transformDialog {
+  .el-form-item__label {
+    line-height: 30px;
+  }
+}
+
+.sendPerson {
+  .el-dialog__body {
+    display: flex;
+    padding: 20px 15% 20px 10% !important;
+
+    >span {
+      min-width: 100px;
+      line-height: 28px;
+      text-align: right;
+      padding-right: 20px;
+    }
+
+    .el-select {
+      width: 100%;
+      height: 28px;
+      line-height: 28px;
+
+      .el-input__inner {
+        height: 28px;
+        line-height: 28px;
+      }
+
+      .el-input__icon {
+        line-height: 28px;
+      }
+    }
+  }
+}

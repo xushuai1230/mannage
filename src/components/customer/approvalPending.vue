@@ -1,10 +1,10 @@
 <template>
   <div> 
     <common-list  
-    :serviceName       ="serviceName"
-    :operationTableName="operationTableName" 
-    :searchName="searchName" 
-    :searchFields="searchFields">  
+    :serviceName        = "serviceName"
+    :operationTableName = "operationTableName" 
+    :searchName         = "searchName" 
+    :searchFields       = "searchFields">  
     </common-list >
   </div>
 </template>
@@ -16,7 +16,7 @@ export default{
     return {
       serviceName       : Yukon.ServiceName.Tenant,
       operationTableName:'CstInformationApprovalPending',
-      searchName        :'客户名称',
+      searchName        :'名称',
       searchFields      :'Name',
     }
   }

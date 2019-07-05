@@ -1,31 +1,24 @@
-const admin = {
+const list = {
   state: {
-    multipleSelection:{},//登录的用户信息
-    codeNum:'',
-    datas:[],//排程参数下拉框数据
+    WFlist: {},          //工作流列表点击信息
+    WFData: []
   },
   mutations: {
-    LISTCHECK(state, val){
-      state.multipleSelection = val
+    LISTCHECK(state, val) {
+      state.WFlist = val
     },
-    CODENUM(state, val){
-      state.codeNum = val
-    },
-    DATASDATA(state, val){
-      state.datas = val
+    WFDATD(state, val) {
+      state.WFData = val
     }
   },
   actions: {
-    listcheck({commit}, val){
+    listcheck({ commit }, val) {
       commit("LISTCHECK", val)
     },
-    codenum({commit}, val){
-      commit("CODENUM", val)
-    },
-    datasdata({commit}, val){
-      commit("DATASDATA", val)
+    wfdata({ commit }, val) {
+      commit("WFDATD", val)
     }
   }
 }
 
-export default admin
+export default list

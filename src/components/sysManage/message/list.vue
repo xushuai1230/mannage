@@ -1,14 +1,11 @@
 <template>
   <div class="conmmonlist">
     <div class="actionBar">
-    <el-row  class="actionBarList">
-       <div class="operationBtn">
-        <el-button size="mini" icon="el-icon-bell" @click="Unread">未读消息</el-button>
-        <el-button size="mini" icon="el-icon-bell" @click="Readly">历史消息</el-button>
-        <el-button size="mini" icon="el-icon-delete" @click="Delete">删除</el-button>
-        <el-button size="mini" icon="el-icon-edit" @click = "SignRead">标记已读</el-button>
-      </div>
-    </el-row>
+      <el-row  class="actionBarList">
+        <div class="operationBtn" v-for="btn in buttonArray" >
+          <el-button size="mini" :icon="btn.icon" @click="Action(btn.btn)" >{{btn.text}}</el-button>
+        </div>
+      </el-row>
   </div>
     <!-- 列表 -->
     <div class="commonTable" >  
@@ -55,7 +52,7 @@
     props: ['refresh','event'],
     data() {
       return {
-        divHeight:'',
+        buttonArray: [],
         tablerows:0,
         tableData: [],
         pagesize:15,//每页的数据条数
@@ -80,24 +77,47 @@
       };
     },
     computed: {
-      propList() {
-        return Object.keys(this.props).map(item => ({
-          name: item,
-        }));
-      },
-      ...mapGetters(['token']), 
+      ...mapGetters(["token", "mid"])
     },
     created(){
+      this.getActionBar();
       this.getData();
     },
     methods: { 
-      Unread(){
-        this.isRead=false;
-        this.getData();
-      },
-      Readly(){
-        this.isRead=true;
-        this.getData();
+      // 获取操作栏
+      getActionBar() {
+        var filter = {
+          Service: Yukon.ServiceName.Tenant,
+          ModularId: this.mid,
+          TabName: "Message"
+        };
+        var filterJson = JSON.stringify(filter);
+        var objData = {
+          Name: "Authorization",
+          DefaultVal: "GetOperationAuthority",
+          Filter: filterJson
+        };
+        var jsonData = JSON.stringify(objData);
+        this.$http.post(Yukon.Url.Bus,qs.stringify({
+          name: Yukon.ServiceName.Tenant,
+          operation: "GetJsonData",
+          token: this.token,
+          reqInfo: jsonData
+        }),
+        {
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+          }
+        }).then(response => {
+          var result = response.data;
+          if (result.code == 0) {
+            var columnsData = result.data;
+            this.buttonArray = columnsData;
+          }
+        })
+        .catch(error => {
+          console.log(error);
+        });
       },
       getData(){
         var dataparams = {
@@ -132,6 +152,21 @@
           alert(error)
         });
       },
+      Action(name) {
+        this[name]();
+      },
+      //刷新
+      Refresh(){
+        this.getData();
+      },
+      Unread(){
+        this.isRead=false;
+        this.getData();
+      },
+      Readly(){
+        this.isRead=true;
+        this.getData();
+      }, 
       //删除
       Delete(){
         if(!this.multipleSelection || this.multipleSelection.length <= 0){
@@ -268,8 +303,5 @@
 .switch-item {
   margin: 20px;
   float: left;
-}
-.zktable-btn{
-  margin: 8px -6px -3px 8px
 }
 </style>

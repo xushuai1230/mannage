@@ -129,7 +129,6 @@ export default {
     },
     CalculationWidth() {
       this.widthHalfMap = (window.innerWidth - 220) / 2 + "px";
-      console.log(window.innerWidth, this.widthHalfMap);
     },
     //饼图数据
     pieGetData() {

@@ -17,8 +17,8 @@ export default{
   data() {    
     return {
       serviceName       : Yukon.ServiceName.Tenant,
-      operationTableName:'DictionaryProvince',
-      searchName        :'省',
+      operationTableName:'SysDictionaryProvince',
+      searchName        :'名称',
       searchFields      :'Name',
       editPageLable     :'省',
       editPageKey       :'ProvinceEdit',

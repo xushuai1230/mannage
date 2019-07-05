@@ -3,8 +3,7 @@ const getters = {
   mid:state => state.user.mid, 
   loginName:state => state.user.loginName, 
   currentHref:state => state.user.currentHref,
-  list_z:state => state.list.multipleSelection,
-  codeNum_z:state => state.list.codeNum,
-  datassss:state => state.list.datas,
+  list_z:state => state.list.WFlist,
+  WFData:state => state.list.WFData
 }
 export default getters

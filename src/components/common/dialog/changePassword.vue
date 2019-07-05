@@ -1,44 +1,44 @@
 <template>
-	<div>
+  <div>
     <el-dialog 
       v-dialogDrag
       ref="dialog__wrapper"
       top="0" 
-      class="cover_dialog"
+      class="mini_dialog"
       :title="dialogCode"
-      :before-close="btnCancel"
+      :before-close="cancel"
       :closeOnClickModal=false
       :visible.sync="dialogVisible">
-      <el-form :inline="true" size="mini">
-      <div class="cover_dialog_body singleColumn">
-        <el-col>
-          <el-col :span="7" style="text-align: right;">
-             <el-form-item  label="新密码："></el-form-item> 
+      <div class="formcenter">
+        <el-form :inline="true" size="mini">
+          <el-col>
+            <el-col :span="7" style="text-align: right;">
+              <el-form-item  label="密码"></el-form-item> 
+            </el-col>
+            <el-col :span="17">
+              <el-tooltip class="item" :disabled="newDisabled" effect="dark" content="密码必须1到12位，且不能出现空格" placement="right">
+                <el-input type="password" v-model="newPassword"  size="mini"></el-input>
+              </el-tooltip>
+            </el-col>
           </el-col>
-          <el-col :span="13">
-            <el-tooltip class="item" :disabled="newDisabled" effect="dark" content="密码必须1到12位，且不能出现空格" placement="right">
-              <el-input type="password" v-model="newPassword"  size="mini"></el-input>
-            </el-tooltip>
+          <el-col>
+            <el-col :span="7" style="text-align: right;">
+              <el-form-item  label="确认密码"></el-form-item> 
+            </el-col>
+            <el-col :span="17">
+              <el-tooltip class="item" :disabled="nowDisabled" effect="dark" content="两次密码输入不一致" placement="right">
+                <el-input type="password" v-model="nowPassword"  size="mini" ></el-input>
+              </el-tooltip>
+            </el-col>
           </el-col>
-        </el-col>
-        <el-col>
-          <el-col :span="7" style="text-align: right;">
-             <el-form-item  label="确认新密码："></el-form-item> 
-          </el-col>
-          <el-col :span="13">
-            <el-tooltip class="item" :disabled="nowDisabled" effect="dark" content="两次密码输入不一致" placement="right">
-              <el-input type="password" v-model="nowPassword"  size="mini" ></el-input>
-            </el-tooltip>
-          </el-col>
-        </el-col>
+        </el-form>
       </div>
-    </el-form>
       <div slot="footer" class="dialog-footer">
-          <el-button size="small" @click="btnCancel">取消</el-button>
-          <el-button type="primary" size="small" @click="btnSure">保存</el-button>
+        <el-button size="small" @click="cancel">取消</el-button>
+        <el-button type="primary" size="small" @click="save">保存</el-button>
       </div>
     </el-dialog>
-	</div>
+  </div>
 </template>
 <script>
   import qs from 'qs';
@@ -48,7 +48,7 @@
     props:['dialogPasswordVisible','dialogCode','IdList','operationTableName'],
     data() {
       return { 
-        dialogVisible:this.dialogPasswordVisible,      //弹框
+        dialogVisible:this.dialogPasswordVisible,  
         optionsData:[],
         array:[],
         newPassword:'',
@@ -58,16 +58,10 @@
       }
     },
     computed:{
-      ...mapGetters(['token']), //获取vuex的token，获取方法this.auser
-    },
-    watch:{
-      dialogCode(newVal ,oldVal){
-      },
-    },
-    created(){
+      ...mapGetters(['token']),
     },
     methods: {
-      btnSure(){
+      save(){
         var count = this.newPassword.match(/\s+/ig) ? this.newPassword.match(/\s+/ig).length : 0;
         if(this.newPassword ==''){
           this.$alert('密码必须1到12位，且不能出现空格', '提示', {
@@ -88,7 +82,7 @@
             }
           });
         }else{
-          var propery={
+          var propery = {
             NewPassword:this.newPassword,
             Id:this.IdList[0]
           }
@@ -103,20 +97,21 @@
             "operation":"SetJsonData",
             "token":this.token,
             "data":data,
-          }),{
-          headers: {
+          }),
+          {
+            headers: {
               'Content-Type': 'application/x-www-form-urlencoded'
             }
           }).then((response)=>{ 
             var result = response.data;
             if (result.code == 0) {
-              this.dialogVisible= false;
+              this.dialogVisible = false;
               this.$emit('dialogVisibleFalse',false) ; 
               this.$message({
                 type: 'success',
                 message: '保存成功!'
               });
-            }else  {
+            }else {
               this.newDisabled=true;
               this.nowDisabled=true;    
               this.$message({
@@ -125,14 +120,13 @@
               }); 
             }
           }).catch(function (error) {
-              console.log(error);
           });
         }
       },
-      btnCancel(){
+      cancel(){
         this.dialogVisible= false;
         this.$emit('dialogVisibleFalse',false) ;
       },
+    }
   }
-}
 </script>

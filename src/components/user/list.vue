@@ -18,7 +18,7 @@ export default{
     return {
       serviceName       : Yukon.ServiceName.Tenant,
       operationTableName:'CstUser',
-      searchName        :'用户名',
+      searchName        :'姓名',
       searchFields      :'Name',
       editPageLable     :'用户维护',
       editPageKey       :'CstUserEdit',

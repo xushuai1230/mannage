@@ -17,7 +17,7 @@ const admin = {
     },
     CURRENTHREF(state, val){
       state.currentHref = val
-    },
+    }
   },
   actions: {
     token({commit}, val){

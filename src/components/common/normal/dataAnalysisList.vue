@@ -3,7 +3,7 @@
 	<div class="actionBar" >
       <el-row class="actionBarList">
         <div class="operationBtn">
-             <el-button size="mini" icon="el-icon-circle-plus" :disabled="btnDisabled" @click="refreshTable">刷新</el-button>
+          <el-button size="mini" icon="el-icon-circle-plus" :disabled="btnDisabled" @click="refreshTable">刷新</el-button>
         </div>
           <div class="inputCont">
             <span class="selectTitle">开始日期</span>
@@ -39,7 +39,7 @@
                 :value="item.key">
               </el-option>
            </el-select>
-           <el-button size="mini" icon="el-icon-search" @click="btnSearch">搜索 </el-button>
+           <el-button class="selectButton" size="mini" icon="el-icon-search" @click="btnSearch">搜索 </el-button>
         </div>
       </el-row>
 	</div>
@@ -165,7 +165,7 @@ export default{
             } 
           }).catch((error)=> { 
             console.log(error)
-            this.loading=false;
+            this.loading = false;
           })
     },
     //下拉框选择值变化

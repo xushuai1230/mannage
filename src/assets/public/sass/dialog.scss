@@ -1,17 +1,6 @@
-.cover_dialog{
-  .el-dialog__body{
-    width: 100%;
-    top: 36px;
-    bottom: 49px;
-    position: absolute;
-    overflow: auto;
-    padding: 16px 20px;
-
-  }
-  .el-table .cell {
-    height: 30px ;
-  }
-  .el-dialog{
+/* 弹框样式 big medium small mini */
+.big_dialog {
+  .el-dialog {
     position: absolute;
     bottom: 0px;
     margin: 0 auto 0px;
@@ -22,307 +11,796 @@
     background: white;
     overflow: auto;
     min-width: 200px;
+
+    .el-button+.el-button {
+      margin-left: 5px;
+    }
   }
-  .cover_dialog_body{
-    min-width: 400px;
-    height: 100%;
-  }
-  .divTableCss{
-    height: 90%;
-  }
-  .el-dialog__header{
+
+  .el-dialog__header {
     padding: 6px 20px 6px;
     background: #3892d4;
-    .el-dialog__title{
+
+    .el-dialog__title {
       color: #fff;
       font-size: 14px;
     }
-    .el-dialog__headerbtn .el-dialog__close{
+
+    .el-dialog__headerbtn .el-dialog__close {
       color: #fff;
     }
-    .el-dialog__headerbtn{
+
+    .el-dialog__headerbtn {
       top: 7px;
     }
   }
-  .el-dialog__footer{
-    width:100%;
+
+  .el-dialog__body {
+    width: 100%;
+    top: 36px;
+    bottom: 49px;
+    position: absolute;
+    overflow: auto;
+    padding: 16px 20px;
+  }
+
+  .el-dialog__footer {
+    width: 100%;
     padding: 8px 18px 0px;
     border-top: 1px solid #409EFF;
     bottom: 8px;
     position: absolute;
   }
-  .el-form-item__label{
-    font-size: 12px;
-    text-align: right;
+
+  .el-form {
+    height: 100%;
+    position: relative
   }
 
-  .el-select {/*下拉框*/
-    display: inline-block;
-    position: relative;
-    width: 100%;
- }
- .singleColumn{
-  padding-left: 5%;
-  padding-right: 25%;
-   .el-input {
-     width: 100% !important;
-   }
- }
- .el-form-item {
+  .table {
+    height: 100%;
+    padding-bottom: 30px;
+
+    .el-table .cell {
+      height: 30px;
+    }
+
+    .pages {
+      position: absolute;
+      height: 30px;
+      bottom: 0px;
+      width: 100%;
+      text-align: right;
+      border-bottom: 0px;
+
+      .el-pagination {
+        border: 1px solid #ebeef5;
+        border-top: none
+      }
+    }
+  }
+
+  .el-form-item {
     margin-bottom: 10px;
-}
-/*穿梭框*/
-.el-transfer-panel__body {
-    overflow: auto;
-    top: 40px;
-    bottom: 0px;
-    position: absolute;
-    width: 100%;
-    height: auto;
-}
-.el-transfer-panel {
-    border: 1px solid #ebeef5;
-    border-radius: 4px;
-    overflow: hidden;
-    background: #fff;
-    display: inline-block;
-    vertical-align: middle;
-    min-width: 100px;
-    max-height: 100%;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    position: relative;
-    width: 45%;
-    height: 100%;
-}
-.el-transfer__buttons {
-    display: inline-block;
-    vertical-align: middle;
-    padding: 0 30px;
-    width: 10%;
-    min-width: 30px;
-}
-.el-transfer {
-    font-size: 14px;
-     overflow: auto; 
-    min-width: 600px;
-    height: 100%;
-}
-.el-transfer-panel__list {
-    margin: 0;
-    padding: 6px 0;
-    list-style: none;
-    height: 100%;
-    overflow: auto;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-}
-/*带按钮的组合框*/
-.combobtnBox{
-  padding-bottom: 10px;
 
-  .selectTitle{
-    width: 100px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    float: left;
+    .el-form-item__label {
+      font-size: 12px;
+      text-align: right;
+    }
   }
-  .el-select {
-    display: inline-block;
-    position: relative;
-    width: 50%;
-  }
-   .el-input {
-    position: relative;
-    font-size: 14px;
-    display: inline-block;
-    width: 100% !important;
-  }
-  .inputChild{
-    width: 50% !important;
-  }
- 
-}
-/*高级搜索样式*/
-.MultiSearchBox{
-    padding-bottom: 10px;
-  .condition{
-    width: 96px;
-    display: inline-block;
-  }
-  .conditionSelect{
-    width: 80px  !important;
-  }
-  .conditionSelect.el-input {
-    position: relative;
-    font-size: 14px;
-    display: inline-block;
-    width: 80px !important;
-  }
-  .el-select {
-    display: inline-block;
-    position: relative;
-    width: 50%;
-  }
-   .el-input {
-    position: relative;
-    font-size: 14px;
-    display: inline-block;
-    width: 100% !important;
-  }
-  .inputChild{
-    width: 50% !important;
-  }
-}
-}
 
-.paramsAlert{
-  .el-dialog-tableCss{
-    width: 100%;height: 100%;border-bottom: 1px solid #ebeef5 !important;
+  .el-radio {
+    line-height: 28px;
   }
-  .el-dialog-buttonCss{
-    margin: 3px 0 0 5px;background-color: #e3e3e3;border-color: #e3e3e3;color: #666;
+
+  .el-checkbox {
+    line-height: 28px;
   }
-  .el-dialog-inputCss{
-    width: 70%;
-  }
-  .el-dialog-btnCss{
-    float: right;
-    margin-top: 3px;
-  }
-}
- .WorkScreeing{
-   .el-tabs--border-card>.el-tabs__header {
-    background-color: #ffffff;
-    border-bottom: 1px solid #d6d5d5;
-    margin: 0;
+
+  .el-switch {
+    line-height: 28px;
     height: 28px;
   }
-  .WorkScreeing_dialog{
-    width: 50%;
-    height: 70%;
-    left: 25%;
+
+  .el-slider {
+    .el-slider__runway {
+      margin: 11px 0;
+    }
+  }
+
+  .el-rate span i {
+    line-height: 28px;
+  }
+
+  .el-badge {
+    line-height: 28px;
+  }
+
+  .el-progress {
+    line-height: 28px;
+  }
+
+  .el-steps {
+    line-height: 28px;
+  }
+
+  .upload-demo {
+    line-height: 28px;
+  }
+
+  .el-select {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+  }
+
+  .singleColumn {
+    padding-right: 5%;
+
+    .el-input {
+      width: 100% !important;
+    }
+  }
+
+  .el-transfer-panel {
+    width: 44%;
+  }
+
+  .el-transfer__buttons {
+    padding: 0px 1%;
+    width: 12%;
+
+    button {
+      margin: 10px auto !important;
+    }
+  }
+
+  .el-transfer {
+    margin-left: 5%;
+  }
+
+  .searchTable {
+    height: 100%;
+    overflow: auto;
+
+    .table {
+      width: 100%;
+      height: calc(100% - 40px);
+      overflow: auto;
+      box-sizing: border-box;
+
+      .pages {
+        width: 100%;
+        border: none;
+        bottom: 1px;
+      }
+    }
+
+    .el-row {
+      padding: 0;
+      height: 30px;
+      overflow: hidden;
+      margin-bottom: 10px;
+      border: none;
+
+      .el-col {
+        height: 100%;
+
+
+        .el-form-item {
+          height: 100%;
+          width: 100%;
+          margin: 0;
+
+          .el-form-item__label {
+            float: left;
+            height: 28px;
+            line-height: 28px;
+          }
+
+          .el-form-item__content {
+            height: 100%;
+            width: 75%;
+            line-height: 30px;
+
+            .el-input {
+              height: 100%;
+
+              .el-input__inner {
+                height: 26px;
+                line-height: 26px;
+              }
+            }
+          }
+        }
+
+      }
+    }
+  }
+}
+
+.medium_dialog {
+  .grant .cell {
+    height: 28px !important;
+
+    .el-input-number__decrease {
+      margin-top: 0;
+    }
+  }
+
+  .el-dialog {
+    position: absolute;
+    bottom: 0px;
+    margin: 0 auto 0px;
+    width: 38%;
+    height: 50%;
+    left: 31%;
     top: 15%;
     background: white;
     overflow: auto;
     min-width: 200px;
   }
-  .WorkScreeing_dialog .el-dialog{
-    height: 666px;
-    margin-top: 8vh
-  }
-  .WorkScreeing_dialog .el-dialog__header {
+
+  .el-dialog__header {
     padding: 6px 20px 6px;
     background: #3892d4;
-}
-.WorkScreeing_dialog .el-dialog__header .el-dialog__title {
-    color: #fff;
-    font-size: 14px;
-}
-.WorkScreeing_dialog  .el-dialog__header .el-dialog__headerbtn .el-dialog__close {
-    color: #fff;
-}
-.WorkScreeing_dialog .el-dialog__header .el-dialog__headerbtn {
-    top: 7px;
-}
-  .el-tabs__item {
-    padding: 0px 20px;
-    height: 28px;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    line-height: 30px;
-    display: inline-block;
-    list-style: none;
-    font-size: 14px;
-    font-weight: 500;
-    color: #303133;
-    position: relative;
+
+    .el-dialog__title {
+      color: #fff;
+      font-size: 14px;
+    }
+
+    .el-dialog__headerbtn .el-dialog__close {
+      color: #fff;
+    }
+
+    .el-dialog__headerbtn {
+      top: 7px;
+    }
   }
- .el-tabs--border-card>.el-tabs__content {
-    padding: 0px;
- }
- .WorkScreeing_dialog .el-dialog__body {
-    height: 620px;
-    padding: 0px 4px;
-    margin-top: 4px;
-  }
-  .WorkScreeing_dialog .el-dialog__footer {
-    padding: 8px 54px 0px;
+
+  .el-dialog__footer {
+    width: 100%;
+    padding: 8px 18px 0px;
     border-top: 1px solid #409EFF;
-    margin-top: 50px;
- }
-  .bar{
-    padding: 4px 4px 4px;
-   }
-   .el-tabs--border-card {
-    background: #fff;
-    border: 1px solid #c2c2c2;
-    -webkit-box-shadow: 0 0px 0px 0 rgba(0,0,0,.12), 0 0 6px 0 rgba(0,0,0,.04);
-    box-shadow: 0 0px 0px 0 rgba(0,0,0,.12), 0 0 6px 0 rgba(0,0,0,.04);
-  }
-  .example{
-        border: 1px solid #c2c2c2;
-        margin-top: 13px;
-        padding: 10px 6px 6px 6px;
-     /*   padding-top: 6px;
-        padding-left: 6px;
-        padding-right: 6px;
-        padding-bottom: 6px*/
-  }
-  .titleP{
-    margin-top: -22px;
-    margin-left: 5px;
+    bottom: 8px;
     position: absolute;
-    background-color: white
   }
-  .exampleSpan{
-    line-height: 2;
+
+  .el-dialog__body {
+    width: 100%;
+    top: 36px;
+    bottom: 49px;
+    position: absolute;
+    overflow: auto;
+    padding: 16px 20px;
   }
-  .exampleDiv{
-   width: 100px;
-   float: right;
-   margin-left: 2px;
-   margin-bottom: 6px;
+
+  .el-form {
+    height: 100%;
+    overflow: auto;
   }
-  .el-input--mini .el-input__inner {
-    height: 24px;
+
+  .formcenter {
+    padding-left: 5%;
+    padding-right: 20%;
+
+    .el-input {
+      width: 100% !important;
+    }
+  }
+
+  .el-radio {
     line-height: 28px;
   }
-  .el-input__icon {
-    height: 100%;
-    width: 25px;
-    text-align: center;
-    -webkit-transition: all .3s;
-    transition: all .3s;
-    line-height: 24px;
- } 
- .el-table .cell {
-    line-height: 20px;
- }
- .el-input__inner {
-    height: 24px;
+
+  .el-checkbox {
+    line-height: 28px;
   }
-  .has-gutter tr th{
-    background-color: #ffffff;
+
+  .el-switch {
+    line-height: 28px;
+    height: 28px;
   }
-  .el-textarea__inner {
-    font-size: 12px;
-  }
-  .paramsList{
-    border: 1px solid #e2e2e2;
-    border-radius: 3px;
-    padding: 10px;
-    height: 200px;
-    overflow: auto;
-    position: absolute;
-    z-index: 2;
-    background-color: white;
-    width: 99%;
-        li{
-          height: 30px;
-          line-height: 30px;
-          cursor: pointer;
-        }
+
+  .el-slider {
+    .el-slider__runway {
+      margin: 11px 0;
     }
- 
- }
+  }
+
+  .el-rate span i {
+    line-height: 28px;
+  }
+
+  .el-badge {
+    line-height: 28px;
+  }
+
+  .el-progress {
+    line-height: 28px;
+  }
+
+  .el-steps {
+    line-height: 28px;
+  }
+
+  .upload-demo {
+    line-height: 28px;
+  }
+
+  .el-form-item__label {
+    font-size: 12px;
+    text-align: right;
+  }
+
+  .el-form-item {
+    margin-bottom: 10px;
+
+    .el-form-item__content {
+      line-height: 28px;
+      width: 56%;
+      margin-left: 0 !important;
+      float: left;
+
+      .el-select {
+        width: 100%;
+
+        .el-input__inner {
+          height: 28px;
+          line-height: 28px;
+        }
+
+        .el-input__icon {
+          line-height: 28px;
+        }
+      }
+
+      .el-input {
+        .el-input__inner {
+          height: 28px;
+          line-height: 28px;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  .el-button+.el-button {
+    margin-left: 5px;
+  }
+
+  .el-select {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+  }
+
+  .el-form-item {
+    margin-bottom: 10px;
+  }
+
+  .el-transfer-panel {
+    width: 44%;
+  }
+
+  .el-transfer__buttons {
+    padding: 0px 1%;
+    width: 12%;
+
+    button {
+      margin: 10px auto !important;
+      padding: 8px;
+    }
+  }
+
+  .el-transfer {
+    margin-left: 12%;
+  }
+  .searchTable {
+    height: 100%;
+    overflow: auto;
+
+    .table {
+      width: 100%;
+      height: calc(100% - 40px);
+      overflow: auto;
+      box-sizing: border-box;
+      padding-bottom: 30px;
+      position: relative;
+      .pages {
+        width: 100%;
+        border: none;
+        bottom: 1px;
+        height: 30px;
+        .el-pagination {
+            border: 1px solid #ebeef5;
+            border-top: none
+          }
+      }
+    }
+
+    .el-row {
+      padding: 0;
+      height: 30px;
+      overflow: hidden;
+      margin-bottom: 10px;
+      border: none;
+
+      .el-col {
+        height: 100%;
+
+
+        .el-form-item {
+          height: 100%;
+          width: 100%;
+          margin: 0;
+
+          .el-form-item__label {
+            float: left;
+            height: 28px;
+            line-height: 28px;
+          }
+
+          .el-form-item__content {
+            height: 100%;
+            width: 75%;
+            line-height: 25px;
+
+            .el-input {
+              height: 100%;
+
+              .el-input__inner {
+                height: 28px;
+                line-height: 28px;
+              }
+            }
+          }
+        }
+
+      }
+    }
+  }
+}
+
+.small_dialog {
+  .grant .cell {
+    height: 28px !important;
+
+    .el-input-number__decrease {
+      margin-top: 0;
+    }
+  }
+
+  .el-dialog {
+    position: absolute;
+    bottom: 0px;
+    margin: 0 auto;
+    width: 30%;
+    height: 45%;
+    left: 35%;
+    top: 20%;
+    background: white;
+    overflow: auto;
+    min-width: 200px;
+  }
+
+  .el-dialog__header {
+    padding: 6px 20px 6px;
+    background: #3892d4;
+
+    .el-dialog__title {
+      color: #fff;
+      font-size: 14px;
+    }
+
+    .el-dialog__headerbtn .el-dialog__close {
+      color: #fff;
+    }
+
+    .el-dialog__headerbtn {
+      top: 7px;
+    }
+  }
+
+  .el-dialog__footer {
+    width: 100%;
+    padding: 8px 18px 0px;
+    border-top: 1px solid #409EFF;
+    bottom: 8px;
+    position: absolute;
+  }
+
+  .el-dialog__body {
+    width: 100%;
+    top: 36px;
+    bottom: 49px;
+    position: absolute;
+    overflow: auto;
+    padding: 16px 20px;
+
+  }
+
+  .el-form {
+    height: 100%;
+    overflow: auto;
+  }
+
+  .formcenter {
+    padding-left: 5%;
+    padding-right: 6%;
+
+    .el-input {
+      width: 100% !important;
+    }
+  }
+
+  .el-form-item__label {
+    font-size: 12px;
+    text-align: right;
+  }
+
+  .el-form-item {
+    margin-bottom: 10px;
+  }
+
+  .el-form-item {
+    margin-bottom: 10px;
+
+    .el-form-item__content {
+      line-height: 28px;
+      width: 56%;
+      margin-left: 0 !important;
+      float: left;
+
+      .el-select {
+        width: 100%;
+
+        .el-input__inner {
+          height: 28px;
+          line-height: 28px;
+        }
+
+        .el-input__icon {
+          line-height: 28px;
+        }
+      }
+
+      .el-input {
+        .el-input__inner {
+          height: 28px;
+          line-height: 28px;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  .el-radio {
+    line-height: 28px;
+  }
+
+  .el-checkbox {
+    line-height: 28px;
+  }
+
+  .el-switch {
+    line-height: 28px;
+    height: 28px;
+  }
+
+  .el-slider {
+    .el-slider__runway {
+      margin: 11px 0;
+    }
+  }
+
+  .el-rate span i {
+    line-height: 28px;
+  }
+
+  .el-badge {
+    line-height: 28px;
+  }
+
+  .el-progress {
+    line-height: 28px;
+  }
+
+  .el-steps {
+    line-height: 28px;
+  }
+
+  .upload-demo {
+    line-height: 28px;
+  }
+
+  .el-button+.el-button {
+    margin-left: 5px;
+  }
+
+  .el-select {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+  }
+
+  .el-transfer-panel {
+    width: 44%;
+
+    .el-checkbox__label {
+      font-size: 12px !important
+    }
+  }
+
+  .el-transfer__buttons {
+    padding: 0px 1%;
+    width: 12%;
+
+    button {
+      margin: 10px auto !important;
+      padding: 2px;
+    }
+  }
+}
+
+.mini_dialog {
+  .grant .cell {
+    height: 28px !important;
+
+    .el-input-number__decrease {
+      margin-top: 0;
+    }
+  }
+
+  .el-dialog {
+    position: absolute;
+    bottom: 0px;
+    margin: 0 auto;
+    width: 19%;
+    height: 23%;
+    left: 40%;
+    top: 30%;
+    background: white;
+    overflow: auto;
+    min-width: 200px;
+  }
+
+  .el-dialog__body {
+    width: 100%;
+    top: 36px;
+    bottom: 49px;
+    position: absolute;
+    overflow: auto;
+    padding: 16px 20px;
+  }
+
+  .el-dialog__header {
+    padding: 6px 20px 6px;
+    background: #3892d4;
+
+    .el-dialog__title {
+      color: #fff;
+      font-size: 14px;
+    }
+
+    .el-dialog__headerbtn .el-dialog__close {
+      color: #fff;
+    }
+
+    .el-dialog__headerbtn {
+      top: 7px;
+    }
+  }
+
+  .el-dialog__footer {
+    width: 100%;
+    padding: 8px 18px 0px;
+    border-top: 1px solid #409EFF;
+    bottom: 8px;
+    position: absolute;
+  }
+
+  .el-form {
+    height: 100%;
+    overflow: auto;
+  }
+
+  .formcenter {
+    padding-right: 10%;
+
+    .el-input {
+      width: 100% !important;
+    }
+  }
+
+  .el-form-item__label {
+    font-size: 12px;
+    text-align: right;
+  }
+
+  .el-form-item {
+    margin-bottom: 10px;
+  }
+
+  .el-form-item {
+    margin-bottom: 10px;
+
+    .el-form-item__content {
+      line-height: 28px;
+      width: 56%;
+      margin-left: 0 !important;
+      float: left;
+
+      .el-select {
+        width: 100%;
+
+        .el-input__inner {
+          height: 28px;
+          line-height: 28px;
+        }
+
+        .el-input__icon {
+          line-height: 28px;
+        }
+      }
+
+      .el-input {
+        .el-input__inner {
+          height: 28px;
+          line-height: 28px;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  .el-radio {
+    line-height: 28px;
+  }
+
+  .el-checkbox {
+    line-height: 28px;
+  }
+
+  .el-switch {
+    line-height: 28px;
+    height: 28px;
+  }
+
+  .el-slider {
+    .el-slider__runway {
+      margin: 11px 0;
+    }
+  }
+
+  .el-rate span i {
+    line-height: 28px;
+  }
+
+  .el-badge {
+    line-height: 28px;
+  }
+
+  .el-progress {
+    line-height: 28px;
+  }
+
+  .el-steps {
+    line-height: 28px;
+  }
+
+  .upload-demo {
+    line-height: 28px;
+  }
+
+  .el-button+.el-button {
+    margin-left: 5px;
+  }
+
+  .el-select {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+  }
+}

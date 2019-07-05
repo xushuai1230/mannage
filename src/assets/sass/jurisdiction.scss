@@ -50,8 +50,9 @@
 			border: 1px solid #c2c2c2;
 			position: relative;
 			overflow-y: auto;
+
 	        .el-table__body-wrapper {
-	            overflow-y: auto;
+				overflow: auto;
 	        }
 	        .mainTable{
 	           width: 100%;
